@@ -1,0 +1,13 @@
+{
+  "development": {
+    "database": "increment_development",
+    "host": "localhost"
+  },
+  "test": {
+    "database": "increment_development_test",
+    "host": "localhost"
+  },
+  "production": {
+    "use_env_variable": "MONGODB_URI"
+  }
+}
