@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const UserSchema = new Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
+  passwordHash: { type: String },
   routines: [{ type: Schema.Types.ObjectId, ref: "Routine" }],
   workouts: [{ type: Schema.Types.ObjectId, ref: "Workout" }]
 });
@@ -23,6 +24,9 @@ UserSchema.virtual("password")
   });
 
 // Create the model with a defined schema
-const User = mongoose.model("User", UserSchema);
+var User = mongoose.model("User", UserSchema);
+
+const test = new User({ username: "username", email: "email" });
+console.log("test =>", test);
 
 module.exports = User;

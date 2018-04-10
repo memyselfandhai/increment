@@ -29,7 +29,6 @@ var models = {};
 //... more models
 
 const mongo = require("./mongo")();
-module.exports = models;
 
 // ----------------------------------------
 // Body Parser

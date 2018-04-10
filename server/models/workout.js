@@ -4,7 +4,10 @@ const Routine = require("./routine");
 const Exercise = require("./exercise");
 
 const WorkoutSchema = new Schema(
-  { set: [{ type: Schema.Types.ObjectId, ref: "Exercise" }, Number] },
+  {
+    routine: { type: Schema.Types.ObjectId, ref: "Routine" },
+    set: [{ type: Schema.Types.ObjectId, ref: "Exercise" }, Number]
+  },
   {
     timestamps: true
   }
